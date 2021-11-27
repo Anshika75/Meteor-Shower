@@ -1,0 +1,324 @@
+<!-----PLEASE PLEASE PLEASE-------->
+<!-------READ THESE LINES--------->
+
+<!-----I am very new to coding so this code can appear boring ---->
+<!------This is very simple --->
+<!-----No. of days i commited to this code = 4----->
+<!----I will not request you all to upvote because that's not the reason i created it---->
+<!----My only aim to create this is self improvement---->
+<!----So please help me in my journey of self improvement by writing your opinions in comments---->
+<!----I am not afraid to face rude comments but yeah i want you all to be truthful please--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\Anshika Thakur\Desktop\r\canvas\cn2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <title>Document</title>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Tangerine:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    overflow: hidden;
+    height:100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#canvas{
+    background-color: #0003;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.page2{
+    overflow: hidden;
+    z-index:5;
+}
+.page1{
+    background: linear-gradient(to top, #283E51, #0A2342);
+    height:100%;
+    width:100%;
+    padding:5px;
+    perspective: 600px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    overflow:visible;
+}
+
+
+.str{
+    height:10px;
+    width:10px;
+    position:absolute;
+    background-color:white;
+    border-radius:50%;
+    box-shadow:0 0 10px 4px #fff8;
+    background-color:#fff8;
+    animation:str 3s linear infinite;
+   /* animation-delay:5s;*/
+    transform: scale(0.1);
+    margin:10px;
+    overflow:visible;
+}
+.str:before{
+    content: "";
+    position:absolute;
+    height:30px;
+    width:5px;
+    background-color:white;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background: linear-gradient(to right, #fff2, #fff, #fff2);
+}
+.str:after{
+    content: "";
+    position:absolute;
+    width:30px;
+    height:5px;
+    background-color:white;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background:linear-gradient(to top, #fff2, #fff, #fff2);
+}
+@keyframes str{ 
+    0%{ 
+        transform: scale(0.1) rotate(-200deg); 
+      } 
+    55%{
+         transform: scale(0.3) rotate(180deg); 
+     } 
+    100%{ 
+        transform: scale(0.1) rotate(-200deg); 
+        } 
+}
+
+
+.base{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+.grass{
+    width: 0;
+    height: 0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom:80px solid #1d1d1d;
+    margin-right: .2px;
+}
+.g3, .g6, .g9, .g12, .g15, .g18, .g21, .g24{
+    transform:rotate(5deg);
+}
+.g1, .g4, .g7, .g10, .g13, .g16, .g19, .g22{
+    transform:rotate(-5deg);
+}
+.load{
+    background-color:black;
+    position:absolute;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Chela One", sans-serif;
+    font-size:3rem;
+    letter-spacing:1rem;
+    color:white;
+    animation:ld 1s 2s linear both;
+    height:100%;
+    width:100%;
+    z-index:20;
+}
+.load div{
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff;
+    animation:load 1s linear alternate infinite;
+   /*border:2px solid white;*/
+    overflow:hidden;
+    letter-spacing: 7px;
+    font-family: 'Raleway', sans-serif;
+    font-weight:900;
+    margin-top:30px;
+    font-size:2.3rem;
+}
+
+@keyframes load{
+    0%{
+        width:100vw;
+    }
+    100%{
+        width:60vw;
+    }
+}
+@keyframes ld{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+
+.load p{
+    background: linear-gradient(15deg, #f2f0f6 30%, #fdf1bf 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0px; 
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    line-height: 1.3rem;
+    font-weight:700;
+    font-family: 'Tangerine', cursive;
+    word-spacing:5px;
+    font-size:1.5rem;
+}
+
+</style>
+    <div class="page page2">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="page page1">
+        <div class="str"></div>
+        <div class="base">
+            <div class="grass g1"></div>
+            <div class="grass g2"></div>
+            <div class="grass g3"></div>
+            <div class="grass g4"></div>
+            <div class="grass g5"></div>
+            <div class="grass g6"></div>
+            <div class="grass g7"></div>
+            <div class="grass g8"></div>
+            <div class="grass g9"></div>
+            <div class="grass g10"></div>
+            <div class="grass g11"></div>
+            <div class="grass g12"></div>
+            <div class="grass g13"></div>
+            <div class="grass g14"></div>
+            <div class="grass g15"></div>
+            <div class="grass g16"></div>
+            <div class="grass g17"></div>
+            <div class="grass g18"></div>
+            <div class="grass g19"></div>
+            <div class="grass g20"></div>
+            <div class="grass g21"></div>
+            <div class="grass g22"></div>
+            <div class="grass g23"></div>
+            <div class="grass g24"></div>
+            <div class="grass g25"></div>
+        </div>
+    </div>
+    <main class="load">
+            <div>LOADING...</div>
+            <p>"I would rather be ashes than dust! I would rather that my spark should burn out in a brilliant blaze than it should be stifled by dry-rot. I would rather be a superb meteor, every atom of me in magnificent glow, than a sleepy and permanent planet. The function of man is to live, not to exist. I shall not waste my days trying to prolong them. I shall use my time....."</p>
+        </main>
+        
+    <script>
+        var canvas, ctx;
+        var prt = [];
+        window.addEventListener("load", function(){
+            for(var i=0; i<100; i++){
+                document.body.innerHTML += `<div class="str"></div>`;
+            }
+            var str = document.querySelectorAll(".str");
+            var page1 = document.querySelector(".page1");
+            var con = page1.getBoundingClientRect();
+            str.forEach((m) =>{
+                    m.style.top = random(con.top,con.top + con.height - 120) + "px";
+                    m.style.left = random(con.top,con.top + con.width - 10) + "px";
+                    m.style.animationDelay = random(10, 50);
+            });
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            canvas.height = innerHeight;
+            canvas.width = innerWidth;
+            for(var i=0; i<1; i++){
+                setInterval(() => {
+                    prt.push(new part(
+                    Math.random()*canvas.width-50,
+                    Math.random()*canvas.height/4
+                ))
+                }, 2000);
+            }
+            draw();
+        })
+        class part{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+                this.sx = 2;
+                this.sy = 2;
+                this.rad = 2.5;
+                this.clr = `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`; 
+            }
+            draw(){
+                ctx.fillStyle = "#ffffff08";
+                //ctx.fillRect(this.x, this.y, 10, 10);
+                ctx.fillStyle = "#fff1";
+                ctx.beginPath();
+                ctx.strokeStyle="#ffffff09";
+                ctx.lineWidth=3;
+                if(this.rad>0){                
+                    ctx.arc(this.x, this.y, this.rad, 0, 2*Math.PI, 0);   
+                }
+                //ctx.fill();
+                ctx.closePath();
+                ctx.stroke();
+            }
+            update(){
+                this.x += this.sx;
+                this.y += this.sy;
+                this.rad -= 0.02;
+                if(this.x + this.wid >= canvas.width && this.y >= canvas.height){
+                    this.x = random(-50,50);
+                    this.x = random(-100,100);
+                    // this.clr = `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`; 
+                }
+                
+            }
+        }
+        function random(min, max){
+            return Math.floor(min + (Math.random()*(max-min)));
+        }
+        function draw(){
+            // ctx.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0; i<prt.length;i++){
+                prt[i].update();
+                prt[i].draw();
+            }
+            requestAnimationFrame(draw);
+        }
+        
+    </script>
+</body>
+</html>
